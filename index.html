@@ -8,12 +8,12 @@
     <script src="app.js" defer></script>
 </head>
 <body>
-    <header class="header">
+    <header>
         <h1 class="logo">Library</h1>
-        <button id="add-book-btn" class="btn">Add New</button>
+        <button id="add-book-btn" class="btn add-btn">Add New</button>
     </header>
 
-    <main class="main">
+    <main>
         <div class="library-section">
             <table class="book-table">
                 <thead>
@@ -28,28 +28,28 @@
                 </thead>
 
                 <tbody id="book-grid">
-                    <!-- 
-                    <tr class="book-row">
-                        <td class="book-title"></td>
-                        <td class="book-author"></td>
-                        <td class="book-genre"></td>
+                    
+                    <tr>
+                        <td>Dude</td>
+                        <td>Book</td>
+                        <td>Fiction</td>
                         <td>
-                            <button class="btn" aria-label="Toggle Read Status">Read/In Progress/Not Read</button>
+                            <button class="btn" aria-label="Toggle Read Status">In Progress</button>
                         </td>
-                        <td class="book-rating"></td>
+                        <td>5</td>
                         <td>
-                            <button class="btn" aria-label="Delete [book]">Delete</button>
+                            <button class="btn btn-delete" aria-label="Delete [book]">Delete</button>
                         </td>
                     </tr> 
-                    -->
+                   
                 </tbody>
             </table>
         </div>
     </main>
 
     <dialog id="book-modal">
+        <h2>Add New Book</h2>
         <form method="dialog" id="book-form">
-            <h2>Add New Book</h2>
             
             <div class="form-control">
                 <label for="title">Title</label>
@@ -93,7 +93,7 @@
             </div>
 
             <div class="form-actions">
-                <button class="btn" type="button" id="cancel-btn">Cancel</button>
+                <button class="btn btn-delete" type="button" id="cancel-btn">Cancel</button>
                 <button class="btn" type="submit">Add Book</button>
             </div>
         </form>

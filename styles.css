@@ -1,0 +1,226 @@
+:root {
+    --background: #FFFDF9;
+    --surface: #FFE6A7;
+    --text-main: #432818;
+    --text-muted: #99582A;
+    
+    --accent: #BB9457;
+    --accent-hover: #9E7B43;
+    --accent-text: #432818;
+    
+    --danger: #6F1D1B;
+    --danger-hover: #541413;
+    --danger-text: #FFFFFF;
+    
+    --border: #E6D09B;
+
+    --status-read: #2D6A4F;
+    --status-read-text: #FFFFFF;
+    
+    --status-progress: #B5762A;
+    --status-progress-text: #FFFFFF;
+    
+    --status-unread: #637380;
+    --status-unread-text: #FFFFFF;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #24140A;
+        --surface: #432818;
+        --text-main: #FFE6A7;
+        --text-muted: #BB9457;
+        
+        --accent: #99582A;
+        --accent-hover: #B36B35;
+        --accent-text: #FFE6A7;
+        
+        --danger: #A13634;
+        --danger-hover: #B84340;
+        --danger-text: #FFFFFF;
+        
+        --border: #5C3A24;
+
+        --status-read: #52B788;
+        --status-read-text: #14241C;
+        
+        --status-progress: #E0A96D;
+        --status-progress-text: #2B1A08;
+        
+        --status-unread: #9BB1C2;
+        --status-unread-text: #141C24;
+    }
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text-main);
+    font-family: system-ui, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    line-height: 1.5;
+}
+
+button, select, input {
+    font: inherit;
+}
+
+/* NAVIGATION */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+}
+
+/* TABLE */
+main {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 2rem;
+}
+
+.library-section {
+    width: 100%;
+    max-width: 1200px;
+    overflow-x: auto;
+}
+
+.book-table {
+    width: 100%;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    text-align: center;
+    border-collapse: collapse;
+}
+
+th {
+    /* inverted colors */
+    background-color: var(--text-main); 
+    color: var(--surface);
+    padding: 0.75rem 1rem;
+}
+
+td {
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 1rem;
+    vertical-align: middle;
+}
+
+/* BUTTONS */
+.btn {
+    background-color: var(--accent);
+    color: var(--accent-text);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.add-btn {
+    font-size: 1.1rem;
+}
+
+.add-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-delete {
+    background-color: var(--danger);
+    color: var(--danger-text);
+}
+
+.btn-delete:hover {
+    background-color: var(--danger-hover);
+}
+
+.status-read {
+    background-color: var(--status-read);
+    color: var(--status-read-text);
+}
+
+.status-in-progress {
+    background-color: var(--status-progress);
+    color: var(--status-progress-text);
+}
+
+.status-unread {
+    background-color: var(--status-unread);
+    color: var(--status-unread-text);
+}
+
+.status-read:hover,
+.status-in-progress:hover,
+.status-unread:hover {
+    opacity: 0.9;
+}
+
+/* DIALOG */
+dialog {
+    background-color: var(--background);
+    border: 1px solid var(--accent);
+    color: var(--text-main);
+    border-radius: 8px;
+    padding: 2rem;
+    width: 60%;
+    max-width: 500px;
+}
+
+dialog::backdrop {
+    background-color: rgba(158, 123, 67, 0.4);
+    backdrop-filter: blur(4px);
+}
+
+dialog h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* FORM */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+input, select {
+    padding: 0.75rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background-color: var(--background);
+    color: var(--text-main);
+    width: 100%;
+    font-size: 1rem;
+}
+
+input:focus, select:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: -1px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.25rem;
+}
