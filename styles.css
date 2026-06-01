@@ -171,17 +171,14 @@ td {
 
 /* DIALOG */
 dialog {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background-color: var(--background);
     border: 1px solid var(--accent);
     color: var(--text-main);
     border-radius: 8px;
     padding: 2rem;
-    width: 60%;
+    width: 90%;
     max-width: 500px;
+    margin: auto;
 }
 
 dialog::backdrop {
