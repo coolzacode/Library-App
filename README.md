@@ -17,7 +17,7 @@ A minimalist and elegant bookshelf tracking application.
 
 ## Features
 
-- **Prototypes:** utilizes shared object prototypes (`Book.prototype.toggleStatus`). 
+- **Uses Prototype:** (`Book.prototype.toggleStatus`). 
 - **High-Performance:** uses `DocumentFragment`, `replaceChildren()`, and structural event delegation. 
 
 ---
