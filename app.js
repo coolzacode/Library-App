@@ -43,9 +43,22 @@ function handleFormSubmit(e) {
     renderLibrary();
 }
 
-function updateBook(id) {
+function updateBookStatus(id) {
     const book = library.filter(book => book.id === id);
     book[0].toggleStatus();
+
+    renderLibrary();
+}
+
+function deleteBook(id) {
+    let bookInd = -1;
+    for (let i = 0; i < library.length; i++) {
+        if (library[i].id === id) {
+            bookInd = i;
+            break;
+        }
+    }
+    library.splice(bookInd, 1);
 
     renderLibrary();
 }
@@ -71,6 +84,7 @@ function renderLibrary() {
         statusBtn.className = 'btn';
         statusBtn.id = 'status-btn';
         deleteBtn.className = 'btn btn-delete';
+        deleteBtn.id = 'delete-btn';
 
         titleCell.textContent = book.title;
         authorCell.textContent = book.author;
@@ -84,7 +98,6 @@ function renderLibrary() {
         statusBtn.ariaLabel =  'Toggle read status';
         deleteBtn.ariaLabel =  `Delete the book titled, ${book.title}, authored by, ${book.author}`;
 
-        console.log(book.status);
         if (book.status === 'read') {
             statusBtn.className = 'btn status-read';
             statusBtn.textContent = 'Read';
@@ -118,8 +131,9 @@ cancelBtn.addEventListener('click', () => {
 form.addEventListener('submit', handleFormSubmit);
 
 displaySection.addEventListener('click', (e) => {
-    const buttonClicked = e.target.closest('#status-btn');
-    if (!buttonClicked) return;
+    const statusBtnClicked = e.target.closest('#status-btn');
+    const deleteBtnClicked = e.target.closest('#delete-btn');
 
-    updateBook(buttonClicked.dataset.id);
+    if (statusBtnClicked) updateBookStatus(statusBtnClicked.dataset.id);
+    if (deleteBtnClicked) deleteBook(deleteBtnClicked.dataset.id);
 })
