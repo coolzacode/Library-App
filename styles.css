@@ -100,6 +100,10 @@ main {
     border-collapse: collapse;
 }
 
+.book-table tr {
+    width: calc(100% / 6);
+}
+
 th {
     /* inverted colors */
     background-color: var(--text-main); 
@@ -143,16 +147,19 @@ td {
 }
 
 .status-read {
+    width: 100%;
     background-color: var(--status-read);
     color: var(--status-read-text);
 }
 
 .status-in-progress {
+    width: 100%;
     background-color: var(--status-progress);
     color: var(--status-progress-text);
 }
 
 .status-unread {
+    width: 100%;
     background-color: var(--status-unread);
     color: var(--status-unread-text);
 }
